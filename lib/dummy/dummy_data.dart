@@ -1,5 +1,5 @@
 import 'package:dashboard/business_logic/total.dart';
-import 'package:dashboard/presentation/view/over_view.dart';
+import 'package:dashboard/presentation/view/main_screens/over_view.dart';
 import 'package:flutter/material.dart';
 
 import '../business_logic/drawer_model.dart';

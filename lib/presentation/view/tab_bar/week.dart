@@ -1,3 +1,4 @@
+import 'package:dashboard/helper/screen_sizes.dart';
 import 'package:dashboard/presentation/view/week_dashboard/week_mobile.dart';
 import 'package:dashboard/presentation/view/week_dashboard/week_web.dart';
 import 'package:flutter/material.dart';
@@ -12,11 +13,7 @@ class WeekDashboard extends StatefulWidget {
 class _WeekDashboardState extends State<WeekDashboard> {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      if(constraints.maxWidth > 800){
-        return const WebWeekDashboard();
-      }
-      return const MobileWeekDashboard();
-    },);
+    bool isMobile = ScreenSizes.isMobile(context);
+    return !isMobile ? const WebWeekDashboard() : const MobileWeekDashboard();
   }
 }

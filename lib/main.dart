@@ -1,5 +1,4 @@
-import 'package:dashboard/presentation/view/middle_point.dart';
-import 'package:dashboard/presentation/widgets/split_view.dart';
+import 'package:dashboard/presentation/view/main_screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +12,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplitView()
+      home: Home()
     );
   }
 }

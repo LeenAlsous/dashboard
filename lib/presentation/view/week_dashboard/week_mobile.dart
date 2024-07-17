@@ -16,36 +16,29 @@ class _MobileWeekDashboardState extends State<MobileWeekDashboard> {
   Widget build(BuildContext context) {
     double height = MediaQuery.sizeOf(context).height * 0.2;
     // todo: custom scroll view
-    return Scaffold(
-      body: Container(
-        color: const Color(0xFFFAFAFA),
-        child: Column(
-          children: [
-            Flexible(
-              flex: 1,
-              fit: FlexFit.loose,
-              child: ListView.builder(
-                itemCount: totals.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => Column(
-                  children: [AnalysisContainer(total: totals[index])],
-                ),
-              ),
+    return NestedScrollView(headerSliverBuilder: (context, innerBoxIsScrolled) {
+      return [
+        SliverToBoxAdapter(
+          child: GridView.builder(
+            itemCount: totals.length,
+            shrinkWrap: true,
+            physics: const ScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
             ),
-            Expanded(
-                child: ListView.builder(
-              itemCount: 5,
-              itemBuilder: (context, index) {
-                return Container(
-                  height: height,
-                  margin: EdgeInsets.all(margin),
-                  color: Colors.red,
-                );
-              },
-            ))
-          ],
-        ),
-      ),
-    );
+            itemBuilder: (context, index) => AnalysisContainer(total: totals[index]),
+          ),
+        )
+      ];
+    }, body: ListView.builder(
+      itemCount: 5,
+      itemBuilder: (context, index) {
+        return Container(
+          height: height,
+          margin: EdgeInsets.all(margin),
+          color: Colors.red,
+        );
+      },
+    ));
   }
 }

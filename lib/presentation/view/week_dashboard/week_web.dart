@@ -11,48 +11,60 @@ class WebWeekDashboard extends StatefulWidget {
 
 class _WebWeekDashboardState extends State<WebWeekDashboard> {
   double margin = 5;
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.sizeOf(context).height * 0.3;
     return Column(
       children: [
         Expanded(
-          child: ListView.builder(
+          child: GridView.builder(
             itemCount: totals.length,
-            scrollDirection: Axis.horizontal,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              crossAxisSpacing: 5,
+              mainAxisSpacing: 5,
+            ),
             itemBuilder: (context, index) => Column(
-              children: [AnalysisContainer(total: totals[index])],
+              children: [
+                AnalysisContainer(total: totals[index]),
+              ],
             ),
           ),
         ),
         Row(
           children: [
             Flexible(
-              flex: 1,
               child: Container(
-                  height: height, margin: EdgeInsets.all(margin), color: Colors.green),
+                  height: height,
+                  margin: EdgeInsets.all(margin),
+                  color: Colors.green),
             ),
             Flexible(
-              flex: 1,
               child: Container(
-                  margin: EdgeInsets.all(margin), height: height, color: Colors.red),
+                  margin: EdgeInsets.all(margin),
+                  height: height,
+                  color: Colors.red),
             )
           ],
         ),
         Row(
           children: [
             Flexible(
-              flex: 1,
               child: Container(
-                  margin: EdgeInsets.all(margin), height: height, color: Colors.green),
+                  margin: EdgeInsets.all(margin),
+                  height: height,
+                  color: Colors.green),
             ),
             Flexible(
-              flex: 1,
               child: Container(
-                  height: height, margin: EdgeInsets.all(margin), color: Colors.red),
+                  height: height,
+                  margin: EdgeInsets.all(margin),
+                  color: Colors.red),
             ),
             Flexible(
-              flex: 1,
               child: Container(
                   margin: EdgeInsets.all(margin),
                   height: height,
