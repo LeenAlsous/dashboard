@@ -1,6 +1,6 @@
 import 'package:dashboard/helper/screen_sizes.dart';
-import 'package:dashboard/presentation/view/week_dashboard/week_mobile.dart';
-import 'package:dashboard/presentation/view/week_dashboard/week_web.dart';
+import 'package:dashboard/presentation/view/tab_bar/week_dashboard/week_mobile.dart';
+import 'package:dashboard/presentation/view/tab_bar/week_dashboard/week_web.dart';
 import 'package:flutter/material.dart';
 
 class WeekDashboard extends StatefulWidget {

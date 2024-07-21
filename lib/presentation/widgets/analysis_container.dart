@@ -1,4 +1,4 @@
-import 'package:dashboard/business_logic/total.dart';
+import 'package:dashboard/business_logic/models/total.dart';
 import 'package:flutter/material.dart';
 
 class AnalysisContainer extends StatelessWidget {
@@ -8,7 +8,7 @@ class AnalysisContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: MediaQuery.sizeOf(context).height * 0.05, right: MediaQuery.sizeOf(context).height * 0.02, left: MediaQuery.sizeOf(context).height * 0.02),
+      margin: EdgeInsets.all(MediaQuery.sizeOf(context).height * 0.02),
       decoration: BoxDecoration(
         color: const Color(0xFFFFFFFF),
         borderRadius: BorderRadius.circular(10)

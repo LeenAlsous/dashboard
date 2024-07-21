@@ -15,7 +15,6 @@ class _MobileWeekDashboardState extends State<MobileWeekDashboard> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.sizeOf(context).height * 0.2;
-    // todo: custom scroll view
     return NestedScrollView(headerSliverBuilder: (context, innerBoxIsScrolled) {
       return [
         SliverToBoxAdapter(
